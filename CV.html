@@ -1,62 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<title>three.js webgl - additive animation - skinning</title>
+		<title>CV Full stack Developer</title>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+		<link rel="stylesheet" href="reset.css">
 		<link rel="stylesheet" href="index.css">
-		<style type="text/css">
-				@font-face {
-					font-family: GreenAvocado; /* Гарнитура шрифта */
-					src: url(assets/Boby.otf); /* Путь к файлу со шрифтом */
-				}
-				header {
-					display: flex;
-				}
-				body {
-					font-family: GreenAvocado, sans-serif;
-				}
-				#info {
-					display: flex;
-					justify-content: center;
-					align-items: center;
-					position: absolute;
-					height: 100vh;
-				}
-				#infoBody {
-					width: 350px;
-					height: 500px;
-					padding: 30px 37px;
-					background-size: 100%;
-					background-image: url("./assets/info.png")
-				}
-				#position {
-					height: 30px;
-					margin: 3px 0 0 17px;
-					font-size: 15px;
-					line-height: 40px;
-					color: rgb(128,128,116);
-				}
-				#account {
-					display: flex;
-					margin: 0 10px;
-					padding: 7px;
-				}
-				#photo {
-					width: 100px;
-					height: 100px;
-				}
-				#name {
-					margin: 7px 25px;
-				}
-				.skillWrapper {
-					width: 65px;
-					height: 50px;
-					display: flex;
-					justify-content: center;
-					align-items: center
-				}
-		</style>
 	</head>
 	<body>
 			<div id="container">
@@ -66,7 +15,7 @@
 							Full Stack developer
 						</p>
 						<div id="account">
-							<img id="photo" src="./me.jpeg" alt="me">
+							<img id="photo" src="assets/me.png" alt="me">
 							<div id="name">
 								<p style="color: rgb(188, 178, 160)">
 									Pavel Matsenko
@@ -76,11 +25,25 @@
 								</p>
 							</div>
 						</div>
-						<div style="height: 185px; padding: 11px 28px">
-							<div class="skillWrapper">
+						<div id="skills">
+							<div class="skillWrapper firstSkill">
 								<img style="width: 55px;" src="./assets/webstorm.svg" alt="">
 							</div>
-<!--							<img style="width: 40px; transform: rotate(-50deg)" src="./assets/book.jpg" alt="">-->
+							<div class="skillWrapper">
+								<img style="width: 55px;" src="./assets/xcode.svg" alt="">
+							</div>
+							<div class="skillWrapper">
+								<img style="width: 45px; margin-left: 10px; margin-top: 3px" src="./assets/trello.svg" alt="">
+							</div>
+							<div class="skillWrapper">
+								<img style="width: 25px; margin-left: 23px; margin-top: 5px; transform: rotate(-50deg)" src="./assets/book.jpg" alt="">
+							</div>
+							<div class="skillWrapper firstSkill" style="position: relative; bottom: 33px; left: 2px">
+								<img style="width: 45px;" src="./assets/jira.svg" alt="">
+							</div>
+							<div class="skillWrapper firstSkill" style="position: relative; bottom: 33px; left: 2px">
+								<img style="width: 30px;" src="./assets/figma.svg" alt="">
+							</div>
 						</div>
 					</div>
 				</div>
@@ -137,7 +100,7 @@
 
 
 				const loader = new GLTFLoader();
-				loader.load( './Me.glb', function ( gltf ) {
+				loader.load( 'assets/Me.glb', function ( gltf ) {
 
 					model = gltf.scene;
 					scene.add( model );
