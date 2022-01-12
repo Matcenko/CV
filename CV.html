@@ -7,40 +7,82 @@
 		<link rel="stylesheet" href="index.css">
 		<style type="text/css">
 				@font-face {
-					font-family: Helvetica; /* Гарнитура шрифта */
-					src: url(assets/Helvetica.ttf); /* Путь к файлу со шрифтом */
+					font-family: GreenAvocado; /* Гарнитура шрифта */
+					src: url(assets/Boby.otf); /* Путь к файлу со шрифтом */
 				}
 				header {
 					display: flex;
 				}
 				body {
-					font-family: Helvetica, sans-serif;
-					color: rgb(30,30,30);
+					font-family: GreenAvocado, sans-serif;
 				}
 				#info {
-					width: 200px;
+					display: flex;
+					justify-content: center;
+					align-items: center;
 					position: absolute;
 					height: 100vh;
-					background: rgba(100,100,100,0.25);
+				}
+				#infoBody {
+					width: 350px;
+					height: 500px;
+					padding: 30px 37px;
+					background-size: 100%;
+					background-image: url("./assets/info.png")
+				}
+				#position {
+					height: 30px;
+					margin: 3px 0 0 17px;
+					font-size: 15px;
+					line-height: 40px;
+					color: rgb(128,128,116);
+				}
+				#account {
+					display: flex;
+					margin: 0 10px;
+					padding: 7px;
 				}
 				#photo {
 					width: 100px;
 					height: 100px;
+				}
+				#name {
+					margin: 7px 25px;
+				}
+				.skillWrapper {
+					width: 65px;
+					height: 50px;
+					display: flex;
+					justify-content: center;
+					align-items: center
 				}
 		</style>
 	</head>
 	<body>
 			<div id="container">
 				<div id="info">
-					<header >
-						<img id="photo" src="./me.jpeg" alt="me">
-						<div>
-							<p>Pavel Matsenko</p>
-							<br/>
-							<p>Full Stack developer</p>
+					<div id="infoBody">
+						<p id="position">
+							Full Stack developer
+						</p>
+						<div id="account">
+							<img id="photo" src="./me.jpeg" alt="me">
+							<div id="name">
+								<p style="color: rgb(188, 178, 160)">
+									Pavel Matsenko
+								</p>
+								<p style="color: rgb(235, 236, 210)">
+									Kiyv, Ukraine
+								</p>
+							</div>
 						</div>
-
-					</header>
+						<div style="height: 185px; padding: 11px 28px">
+							<div class="skillWrapper">
+								<img style="width: 55px;" src="./assets/webstorm.svg" alt="">
+							</div>
+<!--							<img style="width: 40px; transform: rotate(-50deg)" src="./assets/book.jpg" alt="">-->
+						</div>
+					</div>
 				</div>
 			</div>
 		<script type="module">
@@ -53,6 +95,8 @@
 			let scene, renderer, camera;
 			let model;
 
+			const audio = new Audio('assets/audio.mp3');
+			audio.play();
 
 			init();
 
@@ -60,7 +104,7 @@
 
 				const container = document.getElementById( 'container' );
 				scene = new THREE.Scene();
-				scene.background = new THREE.TextureLoader().load('./kiyv.jpg');
+				scene.background = new THREE.TextureLoader().load('./assets/kiyv.jpg');
 				scene.fog = new THREE.Fog( 0xa0a0a0, 25, 100 );
 
 				const hemiLight = new THREE.HemisphereLight( 0xafe0bc, 0x4491e3 );
@@ -78,8 +122,8 @@
 				dirLight.shadow.camera.far = 40;
 				scene.add( dirLight );
 
-				const gt = new THREE.TextureLoader().load( "assets/grasslight-big.jpg" );
-				const gg = new THREE.PlaneGeometry( 20, 20 );
+				const gt = new THREE.TextureLoader().load( "assets/grass.jpg" );
+				const gg = new THREE.PlaneGeometry( 10, 10 );
 				const gm = new THREE.MeshPhongMaterial( { color: 0xffffff, map: gt } );
 
 				const ground = new THREE.Mesh( gg, gm );
@@ -120,7 +164,6 @@
 				controls.enableZoom = false;
 				controls.target.set( -.5, 1, 0 );
 				controls.update();
-
 
 				window.addEventListener( 'resize', onWindowResize );
 			}
