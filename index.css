@@ -8,11 +8,15 @@ header {
 body {
   font-family: GreenAvocado, sans-serif;
 }
+a {
+  color: rgb(73, 125, 40);
+}
 #info {
   display: flex;
   justify-content: center;
   align-items: center;
   position: absolute;
+  left: 87px;
   height: 100vh;
 }
 #infoBody {
@@ -20,8 +24,36 @@ body {
   height: 500px;
   padding: 30px 37px;
   background-size: 100%;
-  background-image: url("./assets/info.png")
+  background-image: url("./assets/info.png");
 }
+#tabs {
+  position: absolute;
+  top: 193px;
+  left: 3px;
+  width: 40px;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.tab{
+  height: 30px;
+  width: 85px;
+  border: 2px solid rgb(77, 60, 41);
+  padding-left: 3px;
+  padding-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  background-image: url("assets/tabBackground.png");
+  cursor: pointer;
+  color: rgb(235, 236, 210);
+}
+#activeTab {
+  color: rgb(77, 60, 41);
+  background-image: url("assets/activeTabBackground.png");
+}
+/* SKILLS */
 #position {
   height: 30px;
   margin: 3px 0 0 17px;
@@ -37,26 +69,84 @@ body {
 #photo {
   width: 100px;
   height: 100px;
+  position: relative;
+  top: 3px;
 }
 #name {
   margin: 7px 25px;
 }
-#skills {
-  height: 185px;
-  padding: 11px 28px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  align-items: flex-start;
+#software {
+  height: 195px;
+  padding: 11px 0 0 33px;
+  display: grid;
+  grid-template-columns: 75px repeat(3, 62px);
+  grid-template-rows: 93px 80px;
+  grid-column-gap: 5px;
 }
-.skillWrapper {
-  margin-bottom: 10px;
-  width: 65px;
+#software div {
   height: 50px;
   display: flex;
   justify-content: center;
   align-items: center
 }
-.firstSkill {
-  margin-right: 20px;
+.firstSoftware {
+  padding-right: 17px;
+}
+#skillSwitcher {
+  height: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2px 17px;
+}
+#skillSwitcher button {
+  width: 28px;
+  height: 24px;
+  opacity: 0;
+  cursor: pointer;
+}
+#skills {
+  padding-left: 13px;
+  height: 105px;
+}
+.skillsSectionHide{
+  display: none;
+}
+#skillsSectionVisible {
+  display: grid;
+  grid-template-columns: repeat(5, 62px);
+  grid-template-rows: 51px 51px;
+  grid-gap: 2px;
+}
+#skillsSectionVisible > div {
+  padding-top: 1px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#skillsSectionVisible > div > img {
+  max-height: 95%;
+  max-width: 95%;
+}
+/* ABOUT */
+#aboutTab {
+  padding: 2px 5px 5px 5px;
+  max-width: 335px;
+  height: 350px;
+}
+#aboutTab > div{
+  width: calc(100% - 20px);
+  height: calc(100% - 40px);
+  padding: 20px 10px;
+  border: 1px solid rgb(77, 60, 41);
+  background-image: url("assets/background.png");
+  overflow-y: scroll;
+}
+#aboutTab h6 {
+  text-align: center;
+  color: rgb(235, 236, 210)
+}
+#aboutTab p {
+  font-size: 12px;
+  color: rgb(188, 178, 160)
 }
