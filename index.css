@@ -14,9 +14,8 @@ a {
 #info {
   display: flex;
   position: absolute;
-  left: 87px;
+  left: 70px;
   padding-top: 100px;
-  height: 100vh;
 }
 #infoBody {
   width: 350px;
@@ -37,7 +36,7 @@ a {
 }
 .tab{
   height: 30px;
-  width: 85px;
+  width: 65px;
   border: 2px solid rgb(77, 60, 41);
   padding-left: 3px;
   padding-top: 10px;
@@ -45,8 +44,9 @@ a {
   align-items: center;
   justify-content: flex-start;
   background-image: url("assets/tabBackground.png");
-  cursor: pointer;
+  font-size: 12px;
   color: rgb(235, 236, 210);
+  cursor: pointer;
 }
 #activeTab {
   color: rgb(77, 60, 41);
