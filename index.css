@@ -13,10 +13,9 @@ a {
 }
 #info {
   display: flex;
-  justify-content: center;
-  align-items: center;
   position: absolute;
   left: 87px;
+  padding-top: 100px;
   height: 100vh;
 }
 #infoBody {

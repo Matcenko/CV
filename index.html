@@ -115,7 +115,6 @@
 								Array.from(this.children).forEach(tab => tab.id = '');
 								e.target.id = 'activeTab';
 								Array.from(document.querySelector('#mainInfo').children).forEach(tab => tab.setAttribute('id', ''));
-								console.log(Array.from(document.querySelector('#mainInfo').children));
 								switch (e.target.outerText) {
 									case 'Skills':
 										document.querySelector('.skillsInfo').setAttribute('id', 'infoVisible');
