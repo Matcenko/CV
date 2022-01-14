@@ -54,6 +54,12 @@ a {
   background-image: url("assets/activeTabBackground.png");
 }
 /* SKILLS */
+.skillsInfo {
+  display: none;
+}
+#infoVisible {
+  display: block;
+}
 #position {
   height: 30px;
   margin: 3px 0 0 17px;
@@ -128,25 +134,50 @@ a {
   max-height: 95%;
   max-width: 95%;
 }
-/* ABOUT */
-#aboutTab {
+/* ABOUT/EXPERIENCE */
+.aboutInfo, .experienceInfo {
+  display: none;
   padding: 2px 5px 5px 5px;
   max-width: 335px;
   height: 350px;
 }
-#aboutTab > div{
+.aboutInfo > div, .experienceInfo > div{
   width: calc(100% - 20px);
   height: calc(100% - 40px);
   padding: 20px 10px;
   border: 1px solid rgb(77, 60, 41);
-  background-image: url("assets/background.png");
   overflow-y: scroll;
 }
-#aboutTab h6 {
+.stoneBackground {
+  background-image: url("assets/background.png");
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+.parchmentBackground {
+  background-image: url("assets/parchment.jpg");
+}
+.experienceBlock {
+  width: calc(100% - 20px);
+  margin-bottom: 20px;
+  padding: 20px 10px;
+  border: 1px solid rgb(77, 60, 41);
+}
+.experienceLogo {
+  width: 50px;
+  height: 50px;
+  float: left;
+  margin-right: 5px;
+  cursor: pointer;
+}
+.aboutInfo h6, .experienceInfo h6 {
   text-align: center;
   color: rgb(235, 236, 210)
 }
-#aboutTab p {
+.aboutInfo p, .experienceInfo p {
   font-size: 12px;
   color: rgb(188, 178, 160)
+}
+.aboutInfo hr, .experienceInfo hr {
+  border-top: 1px solid rgb(128,128,116);
+  border-bottom: 1px solid rgb(235, 236, 210);
 }

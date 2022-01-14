@@ -114,6 +114,19 @@
 
 								Array.from(this.children).forEach(tab => tab.id = '');
 								e.target.id = 'activeTab';
+								Array.from(document.querySelector('#mainInfo').children).forEach(tab => tab.setAttribute('id', ''));
+								console.log(Array.from(document.querySelector('#mainInfo').children));
+								switch (e.target.outerText) {
+									case 'Skills':
+										document.querySelector('.skillsInfo').setAttribute('id', 'infoVisible');
+										break;
+									case 'About':
+										document.querySelector('.aboutInfo').setAttribute('id', 'infoVisible');
+										break;
+									case 'Experience':
+										document.querySelector('.experienceInfo').setAttribute('id', 'infoVisible');
+										break;
+								}
 							})
 		}
 	</script>
@@ -149,101 +162,187 @@
 								</p>
 							</div>
 						</div>
-					<!--SKILLS-->
-						<div id="skillsTab">
-							<div id="software">
-								<div class="firstSoftware">
-									<img style="width: 55px;" src="./assets/webstorm.svg" alt="webstorm">
-								</div>
-								<div>
-									<img style="width: 55px;" src="./assets/xcode.svg" alt="xcode">
-								</div>
-								<div>
-									<img style="width: 45px; margin-left: 10px; margin-top: 3px" src="./assets/trello.svg" alt="trello">
-								</div>
-								<div>
-									<img style="width: 25px; margin-left: 23px; margin-top: 5px; transform: rotate(-50deg)" src="./assets/book.jpg" alt="book">
-								</div>
-								<div class="firstSoftware" style="position: relative; bottom: 33px; left: 2px">
-									<img style="width: 45px;" src="./assets/jira.svg" alt="jira">
-								</div>
-								<div style="position: relative; bottom: 33px; left: 2px">
-									<img style="width: 30px;" src="./assets/figma.svg" alt="figma">
-								</div>
-							</div>
-							<div>
-								<div id="skillSwitcher">
-									<button id="skillSwitcherBack"/>
-									<button id="skillSwitcherNext"/>
-								</div>
-								<div id="skills">
-									<div class="skillsSectionHide" id="skillsSectionVisible">
-										<div><img src="assets/JS.png" alt="JS"/></div>
-										<div><img src="assets/react.svg" alt="react"/></div>
-										<div><img src="assets/reactNative.png" alt="reactNative"/></div>
-										<div><img src="assets/redux.png" alt="redux"/></div>
-										<div><img src="assets/mobx.png" alt="mobx"/></div>
-										<div><img src="assets/nodejs.png" alt="nodejs"/></div>
-										<div><img src="assets/mongodb.png" alt="mongodb"/></div>
-										<div><img src="assets/regex.png" alt="regex"/></div>
-										<div><img src="assets/html5.png" alt="html5"/></div>
-										<div><img src="assets/css3.png" alt="css3"/></div>
+						<main id="mainInfo">
+						<!--SKILLS-->
+							<div class="skillsInfo" id="infoVisible">
+								<div id="software">
+									<div class="firstSoftware">
+										<img style="width: 55px;" src="./assets/webstorm.svg" alt="webstorm">
 									</div>
-									<div class="skillsSectionHide">
-										<div><img src="assets/sass.jpeg" alt="sass"/></div>
-										<div><img src="assets/cssModules.png" alt="cssModules"/></div>
-										<div><img src="assets/AWS.png" alt="AWS"/></div>
-										<div><img src="assets/jquery.png" alt="jquery"/></div>
-										<div><img src="assets/typescript.png" alt="typescript"/></div>
-										<div><img src="assets/git.jpg" alt="git"/></div>
-										<div><img src="assets/npm.png" alt="npm"/></div>
-										<div><img src="assets/yarn.jpg" alt="yarn"/></div>
-										<div><img src="assets/materialUi.png" alt="materialUi"/></div>
-										<div><img src="assets/webpack.png" alt="webpack"/></div>
+									<div>
+										<img style="width: 55px;" src="./assets/xcode.svg" alt="xcode">
+									</div>
+									<div>
+										<img style="width: 45px; margin-left: 10px; margin-top: 3px" src="./assets/trello.svg" alt="trello">
+									</div>
+									<div>
+										<img style="width: 25px; margin-left: 23px; margin-top: 5px; transform: rotate(-50deg)" src="./assets/book.jpg" alt="book">
+									</div>
+									<div class="firstSoftware" style="position: relative; bottom: 33px; left: 2px">
+										<img style="width: 45px;" src="./assets/jira.svg" alt="jira">
+									</div>
+									<div style="position: relative; bottom: 33px; left: 2px">
+										<img style="width: 30px;" src="./assets/figma.svg" alt="figma">
 									</div>
 								</div>
+								<div>
+									<div id="skillSwitcher">
+										<button id="skillSwitcherBack"/>
+										<button id="skillSwitcherNext"/>
+									</div>
+									<div id="skills">
+										<div class="skillsSectionHide" id="skillsSectionVisible">
+											<div><img src="assets/JS.png" alt="JS"/></div>
+											<div><img src="assets/react.svg" alt="react"/></div>
+											<div><img src="assets/reactNative.png" alt="reactNative"/></div>
+											<div><img src="assets/redux.png" alt="redux"/></div>
+											<div><img src="assets/mobx.png" alt="mobx"/></div>
+											<div><img src="assets/nodejs.png" alt="nodejs"/></div>
+											<div><img src="assets/mongodb.png" alt="mongodb"/></div>
+											<div><img src="assets/regex.png" alt="regex"/></div>
+											<div><img src="assets/html5.png" alt="html5"/></div>
+											<div><img src="assets/css3.png" alt="css3"/></div>
+										</div>
+										<div class="skillsSectionHide">
+											<div><img src="assets/sass.jpeg" alt="sass"/></div>
+											<div><img src="assets/cssModules.png" alt="cssModules"/></div>
+											<div><img src="assets/AWS.png" alt="AWS"/></div>
+											<div><img src="assets/jquery.png" alt="jquery"/></div>
+											<div><img src="assets/typescript.png" alt="typescript"/></div>
+											<div><img src="assets/git.jpg" alt="git"/></div>
+											<div><img src="assets/npm.png" alt="npm"/></div>
+											<div><img src="assets/yarn.jpg" alt="yarn"/></div>
+											<div><img src="assets/materialUi.png" alt="materialUi"/></div>
+											<div><img src="assets/webpack.png" alt="webpack"/></div>
+										</div>
+									</div>
+								</div>
 							</div>
-						</div>
-						<!--ABOUT-->
-						<div id="aboutTab" style="display: none">
-							<div>
-								<h6>
-									About me
-								</h6>
-								<p>
-									Hi! I'm a full stack developer, I have experience in creating web-sites, blockchain
-									technologies, creating mobile apps with React Native, backend with Node.js.
-									Good in management, have experience in team management. I'd like to find product company
-									with office in Kyiv. I prefer a project don't related with banks and casinos.
-								</p>
-								<br/>
-								<h6>Contacts</h6>
-								<p>
-									Phone: <a href="tel:+380506234608">+380506234608</a>
+							<!--ABOUT-->
+							<div class="aboutInfo">
+								<div class="stoneBackground">
+									<h6>
+										About me
+									</h6>
+									<p>
+										Hi! I'm a full stack developer, I have experience in creating web-sites, blockchain
+										technologies, creating mobile apps with React Native, backend with Node.js.
+										Good in management, have experience in team management. I'd like to find product company
+										with office in Kyiv. I prefer a project don't related with banks and casinos.
+									</p>
 									<br/>
-									Mail: <a href="mailto:pavelmatsenko@gmail.com">pavelmatsenko@gmail.com</a>
+									<h6>Contacts</h6>
+									<p>
+										Phone: <a href="tel:+380506234608">+380506234608</a>
+										<br/>
+										Telegram: <a href="https://t.me/pavlomatsenko">@pavlomatsenko</a>
+										<br>
+										Mail: <a href="mailto:pavelmatsenko@gmail.com">pavelmatsenko@gmail.com</a>
+										<br/>
+										Linkedin <a href="https://www.linkedin.com/in/pavelmatcenko/">linkedin.com/in/pavelmatcenko</a>
+										<br/>
+										Github <a href="https://github.com/Matcenko">github.com/Matcenko</a>
+									</p>
 									<br/>
-									Telegram: <a href="https://t.me/pavlomatsenko">@pavlomatsenko</a>
-								</p>
-								<br/>
-								<h6>
-									Languages
-								</h6>
-								<p>UKRAINIAN: Native</p>
-								<p>RUSSIAN: Native</p>
-								<p>ENGLISH: Intermediate</p>
-								<br/>
-								<h6>
-									Interests
-								</h6>
-								<p>
-									Chinese tea, meditation, camping, investment, reading, gym.
-								</p>
+									<h6>
+										Languages
+									</h6>
+									<p>UKRAINIAN: Native</p>
+									<p>RUSSIAN: Native</p>
+									<p>ENGLISH: Intermediate</p>
+									<br/>
+									<h6>
+										Interests
+									</h6>
+									<p>
+										Chinese tea, meditation, camping, investment, reading, gym.
+									</p>
+								</div>
 							</div>
-						</div>
-						<div>
-						<!--EXPERIENCE-->
-						</div>
+							<!--EXPERIENCE-->
+								<div class="experienceInfo">
+									<div class="parchmentBackground">
+										<div class="stoneBackground experienceBlock">
+											<h6>Full stack developer - Team leader</h6>
+											<h6>Jun 2020 — Dec 2021</h6>
+											<p>
+												<a target="_blank" href="https://www.linkedin.com/company/inc4/?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base%3BncvV00Q7S96QUEmsLGdd9g%3D%3D&licu=urn%3Ali%3Acontrol%3Ad_flagship3_profile_view_base-background_details_company">
+													<img class="experienceLogo" src="assets/INC4.jpeg" alt="INC4">
+												</a>
+												Management frontend team of three developers;
+												Setting tasks;
+												Code review;
+												Communication with English-speaking clients;
+												Participation in the implementation of business logic;
+												Backend developing using Node.js;
+												Mobile developing using React Native;
+												Work with AWS;
+												Creation of Front-End logic on JavaScript;
+												Making adaptive markup of web-sites;
+												Minor experience with Ambrosus blockchain and smart contracts on Near network;
+												Participation in conferences and business negotiations
+												<a href="https://medium.com/nearprotocol/near-con-highlights-talks-videos-be6139d20498">NearCon 2021</a>,
+												<a href="https://blockchainua.com">Blockchain UA 2021</a>.
+											</p>
+										</div>
+										<div class="stoneBackground experienceBlock">
+											<h6>Frontend Developer</h6>
+											<h6>Mar 2019 — Apr 2020</h6>
+											<p>
+												<a target="_blank" href="https://www.linkedin.com/company/stubbs-pro/?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base%3BsuztoX0fQvyQZ7cAzYCXvA%3D%3D&licu=urn%3Ali%3Acontrol%3Ad_flagship3_profile_view_base-background_details_company">
+													<img class="experienceLogo" src="assets/stubbs.jpeg" alt="stubbs">
+												</a>
+												Making adaptive markup of web-sites;
+												Creation of Front-End logic on JavaScript;
+												Creation of Back-End on Node.js;
+												Creation of site’s administration logic.
+											</p>
+										</div>
+										<div class="stoneBackground experienceBlock">
+											<h6>Manager of sales</h6>
+											<h6>May 2018 — Mar 2019</h6>
+											<p>
+												<a target="_blank" href="https://www.linkedin.com/company/2maccz/?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base%3BsuztoX0fQvyQZ7cAzYCXvA%3D%3D&licu=urn%3Ali%3Acontrol%3Ad_flagship3_profile_view_base-background_details_company">
+													<img class="experienceLogo" src="assets/2mac.jpeg" alt="2mac">
+												</a>
+												Making contact with client's wholesale products, establishing cooperation with the Apple spare parts trading;
+												Work with 1C-table;
+												Little repair of Apple devices;
+												Understanding the business processes of the company while making my own decision.
+											</p>
+										</div>
+										<hr/>
+										<div class="stoneBackground experienceBlock">
+											<h6>National Pedagogical Dragomanov University</h6>
+											<h6>2014 — 2018</h6>
+											<p>
+												<a target="_blank" href="https://www.linkedin.com/school/national-pedagogical-dragomanov-university/">
+													<img class="experienceLogo" src="assets/academy.jpg" alt="NPU">
+												</a>
+												<br>
+												Institute of Foreign languages.
+												<br/>
+												<br/>
+											</p>
+										</div>
+										<div class="stoneBackground experienceBlock" style="margin-bottom: 0">
+											<h6>Computer school Hillel</h6>
+											<h6>2018 — 2019</h6>
+											<p>
+												<a target="_blank" href="https://www.linkedin.com/school/ithillel/">
+													<img class="experienceLogo" src="assets/hillel.jpeg" alt="hillel">
+												</a>
+												<p style="position: relative; top: 10px">
+													Front-End Basic;
+													<br>
+													Front-End Pro;
+												</p>
+												<br/>
+											</p>
+										</div>
+									</div>
+								</div>
+						</main>
 					</div>
 				</div>
 			</div>
