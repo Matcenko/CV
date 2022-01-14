@@ -115,10 +115,11 @@
 
 			document.querySelector('#tabs')
 				.addEventListener('click', function (e) {
-
-					Array.from(this.children).forEach(tab => tab.id = '');
-					e.target.id = 'activeTab';
-					const clearTabs = () => Array.from(document.querySelector('#mainInfo').children).forEach(tab => tab.setAttribute('id', ''));
+					const clearTabs = () => {
+						Array.from(this.children).forEach(tab => tab.id = '');
+						Array.from(document.querySelector('#mainInfo').children).forEach(tab => tab.setAttribute('id', ''))
+						e.target.id = 'activeTab';
+					};
 					switch (e.target.outerText) {
 						case 'Skills':
 							clearTabs();
