@@ -99,8 +99,6 @@
 
 			document.querySelector('#skillSwitcher')
 				.addEventListener('click', (e) => {
-					const audio = new Audio('assets/click.mp3');
-					audio.play();
 
 					const skillsTag = document.querySelector('#skills');
 					const direction = e.target.id === 'skillSwitcherBack' ? -1 : 1;
@@ -117,8 +115,6 @@
 
 			document.querySelector('#tabs')
 				.addEventListener('click', function (e) {
-					const audio = new Audio('assets/paper.mp3');
-					audio.play();
 
 					Array.from(this.children).forEach(tab => tab.id = '');
 					e.target.id = 'activeTab';
@@ -236,7 +232,7 @@
 										Hi! I'm a full stack developer, I have experience in creating web-sites, blockchain
 										technologies, creating mobile apps with React Native, backend with Node.js.
 										Good in management, have experience in team management. I'd like to find product company
-										with office in Kyiv. I prefer a project don't related with banks and casinos.
+										with office in Kyiv. I prefer a project doesn't related to banks and casinos.
 									</p>
 									<br/>
 									<h6>Contacts</h6>
