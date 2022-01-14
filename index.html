@@ -50,7 +50,7 @@
 			loader.load( 'assets/Me.glb', function ( gltf ) {
 
 				model = SkeletonUtils.clone( gltf.scene );
-				model.position.x = 0;
+				model.position.x = window.innerWidth > 750 ? 0 : 0.6;
 				scene.add( model );
 
 				model.traverse( function ( object ) {
@@ -81,6 +81,7 @@
 		function onWindowResize() {
 			camera.aspect = window.innerWidth / window.innerHeight;
 			camera.updateProjectionMatrix();
+			window.innerWidth > 750 ? model.position.x = 0 : model.position.x = 0.6;
 			renderer.setSize( window.innerWidth < 750 ? 750 : window.innerWidth, window.innerHeight < 750 ? 750 : window.innerHeight );
 		}
 
@@ -91,8 +92,15 @@
 
 		// Page logic
 		window.onload = () => {
+			document.querySelector('#showCV').addEventListener('click', function (e) {
+				const shouldShow = e.target.innerText === 'Show CV';
+				document.querySelector('#infoBody').style.display = shouldShow ? 'block' : 'none';
+				document.querySelector('#tabs').style.display =  shouldShow ? 'flex' : 'none';
+				this.innerText = `${shouldShow ? 'Hide' : 'Show'} CV`;
+			})
+
 			document.querySelector('#skillSwitcher')
-				.addEventListener('click', function (e) {
+				.addEventListener('click', (e) => {
 					const audio = new Audio('assets/click.mp3');
 					audio.play();
 
@@ -110,25 +118,25 @@
 				})
 
 			document.querySelector('#tabs')
-							.addEventListener('click', function (e) {
-								const audio = new Audio('assets/paper.mp3');
-								audio.play();
+				.addEventListener('click', function (e) {
+					const audio = new Audio('assets/paper.mp3');
+					audio.play();
 
-								Array.from(this.children).forEach(tab => tab.id = '');
-								e.target.id = 'activeTab';
-								Array.from(document.querySelector('#mainInfo').children).forEach(tab => tab.setAttribute('id', ''));
-								switch (e.target.outerText) {
-									case 'Skills':
-										document.querySelector('.skillsInfo').setAttribute('id', 'infoVisible');
-										break;
-									case 'About':
-										document.querySelector('.aboutInfo').setAttribute('id', 'infoVisible');
-										break;
-									case 'Experience':
-										document.querySelector('.experienceInfo').setAttribute('id', 'infoVisible');
-										break;
-								}
-							})
+					Array.from(this.children).forEach(tab => tab.id = '');
+					e.target.id = 'activeTab';
+					Array.from(document.querySelector('#mainInfo').children).forEach(tab => tab.setAttribute('id', ''));
+					switch (e.target.outerText) {
+						case 'Skills':
+							document.querySelector('.skillsInfo').setAttribute('id', 'infoVisible');
+							break;
+						case 'About':
+							document.querySelector('.aboutInfo').setAttribute('id', 'infoVisible');
+							break;
+						case 'Experience':
+							document.querySelector('.experienceInfo').setAttribute('id', 'infoVisible');
+							break;
+					}
+				})
 		}
 	</script>
 	<body>
@@ -145,6 +153,7 @@
 					</div>
 				</div>
 				<div id="info">
+					<button id="showCV">Show CV</button>
 					<div id="infoBody">
 						<p id="position">
 							Full Stack developer

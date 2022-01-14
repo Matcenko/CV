@@ -24,6 +24,29 @@ a {
   background-size: 100%;
   background-image: url("./assets/info.png");
 }
+@media (max-width: 750px) {
+  #infoBody {
+    display: none;
+  }
+}
+#showCV {
+  position: absolute;
+  top: 100px;
+  left: 0;
+  width: 70px;
+  padding-top: 12px;
+  background-color: rgb(235, 236, 210);
+  color: rgb(77, 60, 41);
+  border: 1px solid rgb(77, 60, 41);
+  border-radius: 4px;
+  font-size: 12px;
+  cursor: pointer;
+}
+@media (min-width: 750px) {
+  #showCV {
+    display: none;
+  }
+}
 #tabs {
   position: absolute;
   top: 193px;
@@ -33,6 +56,11 @@ a {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+@media (max-width: 750px) {
+  #tabs {
+    display: none;
+  }
 }
 .tab{
   height: 30px;
