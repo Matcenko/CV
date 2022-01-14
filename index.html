@@ -118,15 +118,18 @@
 
 					Array.from(this.children).forEach(tab => tab.id = '');
 					e.target.id = 'activeTab';
-					Array.from(document.querySelector('#mainInfo').children).forEach(tab => tab.setAttribute('id', ''));
+					const clearTabs = () => Array.from(document.querySelector('#mainInfo').children).forEach(tab => tab.setAttribute('id', ''));
 					switch (e.target.outerText) {
 						case 'Skills':
+							clearTabs();
 							document.querySelector('.skillsInfo').setAttribute('id', 'infoVisible');
 							break;
 						case 'About':
+							clearTabs();
 							document.querySelector('.aboutInfo').setAttribute('id', 'infoVisible');
 							break;
 						case 'Experience':
+							clearTabs();
 							document.querySelector('.experienceInfo').setAttribute('id', 'infoVisible');
 							break;
 					}
