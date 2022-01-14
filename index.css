@@ -15,7 +15,7 @@ a {
   display: flex;
   position: absolute;
   left: 70px;
-  padding-top: 100px;
+  padding-top: 3vh;
 }
 #infoBody {
   width: 350px;
@@ -31,7 +31,7 @@ a {
 }
 #showCV {
   position: absolute;
-  top: 100px;
+  top: 3vh;
   left: 0;
   width: 70px;
   padding-top: 12px;
@@ -49,7 +49,8 @@ a {
 }
 #tabs {
   position: absolute;
-  top: 193px;
+  padding-top: 70px;
+  top: 3vh;
   left: 3px;
   width: 40px;
   height: 200px;
