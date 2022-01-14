@@ -50,7 +50,6 @@
 			loader.load( 'assets/Me.glb', function ( gltf ) {
 
 				model = SkeletonUtils.clone( gltf.scene );
-				model.position.x = window.innerWidth > 750 ? 0 : 0.6;
 				scene.add( model );
 
 				model.traverse( function ( object ) {
@@ -62,12 +61,12 @@
 
 			renderer = new THREE.WebGLRenderer( { antialias: true } );
 			renderer.setPixelRatio( window.devicePixelRatio );
-			renderer.setSize( window.innerWidth < 750 ? 750 : window.innerWidth, window.innerHeight < 750 ? 750 : window.innerHeight );
+			renderer.setSize(  document.documentElement.scrollWidth, window.innerHeight);
 			renderer.outputEncoding = THREE.sRGBEncoding;
 			renderer.shadowMap.enabled = true;
 			container.appendChild( renderer.domElement );
 
-			camera = new THREE.PerspectiveCamera( 45, window.innerWidth / window.innerHeight, 1, 100 );
+			camera = new THREE.PerspectiveCamera( 45,document.documentElement.scrollWidth / window.innerHeight, 1, 100 );
 			camera.position.set( 0, 1, 4 );
 
 			const controls = new OrbitControls( camera, renderer.domElement );
@@ -79,10 +78,9 @@
 		}
 
 		function onWindowResize() {
-			camera.aspect = window.innerWidth / window.innerHeight;
+			camera.aspect = document.documentElement.scrollWidth / window.innerHeight;
 			camera.updateProjectionMatrix();
-			window.innerWidth > 750 ? model.position.x = 0 : model.position.x = 0.6;
-			renderer.setSize( window.innerWidth < 750 ? 750 : window.innerWidth, window.innerHeight < 750 ? 750 : window.innerHeight );
+			renderer.setSize( document.documentElement.scrollWidth, window.innerHeight  );
 		}
 
 		function animate() {
